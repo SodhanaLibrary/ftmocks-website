@@ -1,9 +1,14 @@
 import * as React from 'react';
+// import SliderText from './SliderText';
+// import './App.css';
 
 export default function Textcursole() {
     return (
         <div className="carousel">
         <div className="slides">
+            {/* <nav>
+                <a href='#'>Product</a>
+            </nav> */}
             <div className="slide" id="slide1">
                 <h2>FT mock</h2>
                 <p>Your journey starts here. Discover our services and offerings.</p>

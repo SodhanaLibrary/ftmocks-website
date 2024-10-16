@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -18,7 +19,7 @@ const items = [
 
   {
       icon: <EdgesensorHighRoundedIcon />,
-      title: 'Generating mock data',
+      title: 'Creating mock data',
       description:
         'This item could provide information about the mobile app version of the product.',
       imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
@@ -70,7 +71,39 @@ function MobileLayout({ selectedItemIndex, handleItemClick, selectedFeature }) {
           />
         ))}
       </Box>
-      
+      <Card variant="outlined">
+        <Box
+          // sx={(theme) => ({
+          //   mb: 2,
+          //   backgroundSize: 'cover',
+          //   backgroundPosition: 'center',
+          //   minHeight: 280,
+          //   backgroundImage: 'var(--items-imageLight)',
+          //   ...theme.applyStyles('dark', {
+          //     backgroundImage: 'var(--items-imageDark)',
+          //   }),
+          // })}
+          // style={
+          //   items[selectedItemIndex]
+          //     ? {
+          //         '--items-imageLight': items[selectedItemIndex].imageLight,
+          //         '--items-imageDark': items[selectedItemIndex].imageDark,
+          //       }
+          //     : {}
+          // }
+        />
+        {/* <Box sx={{ px: 2, pb: 2 }}>
+          <Typography
+            gutterBottom
+            sx={{ color: 'text.primary', fontWeight: 'medium' }}
+          >
+            {selectedFeature.title}
+          </Typography>
+          <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1.5 }}>
+            {selectedFeature.description}
+          </Typography>
+        </Box> */}
+      </Card>
     </Box>
   );
 }
@@ -98,7 +131,7 @@ export default function Features() {
 const selectedFeature = items[selectedItemIndex];
 
   return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 16  } }}>
+    <Container id="features" sx={{ py: { xs: 8, sm: 16 } }}>
       <Box sx={{ width: { sm: '100%', md: '60%' } }}>
         <Typography
           component="h2"
@@ -106,7 +139,7 @@ const selectedFeature = items[selectedItemIndex];
           gutterBottom
           sx={{ color: 'text.primary' }}
         >
-          Generating mock data
+          Creating mock data
         </Typography>
         <Typography
           variant="body1"
@@ -120,21 +153,19 @@ const selectedFeature = items[selectedItemIndex];
       <Box
         sx={{
           display: 'flex',
-          flexDirection: { xs: 'column', md: 'column' },
-         flexDirection:"row",
-         alignItems: 'left',
-          gap: 6,
+          flexDirection: { xs: 'column', md: 'row-reverse' },
+          gap: 2,
         }}
       >
         <div>
           <Box
             sx={{
               display: { xs: 'none', sm: 'flex' },
-              flexDirection: 'colum',
+              flexDirection: 'row-reverse',
               gap: 2,
               height: '100%',
             }}
-           > 
+          >
             {items.map(({ icon, title, description }, index) => (
               <Box
                 key={index}
@@ -179,20 +210,22 @@ const selectedFeature = items[selectedItemIndex];
               </Box>
             ))}
           </Box>
-          
-        </div> 
+          {/* <MobileLayout
+            selectedItemIndex={selectedItemIndex}
+            handleItemClick={handleItemClick}
+            selectedFeature={selectedFeature}
+          /> */}
+        </div>
         <Box
   
          sx={{
           display: { xs: 'none', sm: 'flex' },
           width: { xs: '100%', md: '70%' },
           height: 'var(--items-image-height)',
-          // flexDirection: 'row-reverse',
           }}
 
           >
-          
-
+            
           <Card
             variant="outlined"
             sx={{
@@ -200,35 +233,32 @@ const selectedFeature = items[selectedItemIndex];
               width: '100%',
               display: { xs: 'none', sm: 'flex' },
               pointerEvents: 'none',
-              flexDirection: 'row-reverse', 
             }}
-            >
-          
+          >
             <Box
               sx={(theme) => ({
                 m: 'auto',
                 width: 420,
                 height: 500,
-                // flexDirection: 'row-reverse', 
+                flexDirection: 'row-reverse', 
                 backgroundSize: 'contain',
                 backgroundImage: 'var(--items-imageLight)',
                 ...theme.applyStyles('dark', {
                   backgroundImage: 'var(--items-imageDark)',
                 }),
               })}
-              //   style={  
-              //      items[selectedItemIndex]
-              //       ? {
-              //           '--items-imageLight': items[selectedItemIndex].imageLight,
-              //        '--items-imageDark': items[selectedItemIndex].imageDark,
-              //        }
-              //      : {}
-              //  }
-            /> 
+              // style={
+              //   items[selectedItemIndex]
+              //     ? {
+              //         '--items-imageLight': items[selectedItemIndex].imageLight,
+              //         '--items-imageDark': items[selectedItemIndex].imageDark,
+              //       }
+              //     : {}
+              // }
+            />
           </Card>
-         </Box>
+        </Box>
       </Box>
-     
     </Container>
   );
 }

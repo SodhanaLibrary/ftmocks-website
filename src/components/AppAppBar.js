@@ -11,7 +11,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import Sitemark from './SitemarkIcon';
+// import Sitemark from './SitemarkIcon';
+
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -38,32 +39,42 @@ export default function AppAppBar() {
     <AppBar
       position="fixed"
       sx={{ boxShadow: 0, bgcolor: 'transparent', backgroundImage: 'none', mt: 10 }}
-    >
+    >  
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
-          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-            <Sitemark />
+        {/* <Button   color="primary" variant="text" size="large">
+               FtMocks
+              </Button> */}
+         
+          <Box sx={{ flexGrow: 5, display: 'flex', alignItems: 'center', px: 20,  }}>
+            {/* <Sitemark /> */}
+            
+            <Button   color="primary" variant="text" size="large">
+               <a href="FtMock"> FtMock</a>
+              </Button>
+            
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <Button variant="text" color="info" size="small">
-                Features
+              <a href="Products"> Products</a>
               </Button>
               <Button variant="text" color="info" size="small">
-                Testimonials
+              <a href="Docs"> Docs</a>
               </Button>
               <Button variant="text" color="info" size="small">
-                Highlights
+              <a href="Team"> Team</a>
               </Button>
               <Button variant="text" color="info" size="small">
-                Pricing
+              <a href="Pricing"> Pricing</a>
               </Button>
               <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                FAQ
+              <a href="Support"> Support</a>
               </Button>
               <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                Blog
+              <a href="Blog">Blog </a>
               </Button>
             </Box>
           </Box>
+          
           <Box
             sx={{
               display: { xs: 'none', md: 'flex' },
@@ -96,11 +107,11 @@ export default function AppAppBar() {
                   </IconButton>
                 </Box>
                 <Divider sx={{ my: 3 }} />
-                <MenuItem>Features</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
-                <MenuItem>Highlights</MenuItem>
-                <MenuItem>Pricing</MenuItem>
-                <MenuItem>FAQ</MenuItem>
+                <MenuItem>products</MenuItem>
+                <MenuItem>Docs</MenuItem>
+                <MenuItem>Team</MenuItem>
+                <MenuItem>pricing</MenuItem>
+                <MenuItem>support</MenuItem>
                 <MenuItem>Blog</MenuItem>
                 <MenuItem>
                   <Button color="primary" variant="contained" fullWidth>

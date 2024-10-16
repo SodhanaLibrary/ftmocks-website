@@ -13,6 +13,11 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import getMPTheme from './theme/getMPTheme';
 import TemplateFrame from './TemplateFrame';
+import Generat from './components/Generat';
+import Creating from './components/Creating';
+import Textcursole from './components/Textcursole';
+
+
 
 export default function MarketingPage() {
   const [mode, setMode] = React.useState('light');
@@ -55,14 +60,17 @@ export default function MarketingPage() {
       <ThemeProvider theme={showCustomTheme ? MPTheme : defaultTheme}>
         <CssBaseline enableColorScheme />
         <AppAppBar />
-        <Hero />
+        {/* <Hero /> */}
         <div>
-          <LogoCollection />
+          {/* <LogoCollection /> */}
+          <Textcursole/>
           <Features />
           <Divider />
-          <Testimonials />
+          <Generat/>
+          {/* <Testimonials /> */}
           <Divider />
-          <Highlights />
+          <Creating />
+          {/* <Highlights /> */}
           <Divider />
           <Pricing />
           <Divider />

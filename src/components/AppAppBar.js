@@ -10,8 +10,9 @@ import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
+import Typography from '@mui/material/Typography';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-// import Sitemark from './SitemarkIcon';
+import FtMocksIcon from './FtMocksIcon';
 
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -19,7 +20,6 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   flexShrink: 0,
-  borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
   backdropFilter: 'blur(24px)',
   border: '1px solid',
   borderColor: theme.palette.divider,
@@ -38,7 +38,7 @@ export default function AppAppBar() {
   return (
     <AppBar
       position="fixed"
-      sx={{ boxShadow: 0, bgcolor: 'transparent', backgroundImage: 'none', mt: 10 }}
+      sx={{ boxShadow: 0, bgcolor: 'transparent', backgroundImage: 'none', mt: 2 }}
     >  
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
@@ -46,14 +46,10 @@ export default function AppAppBar() {
                FtMocks
               </Button> */}
          
-          <Box sx={{ flexGrow: 5, display: 'flex', alignItems: 'center', px: 20,  }}>
-            {/* <Sitemark /> */}
-            
-            <Button   color="primary" variant="text" size="large">
-               <a href="FtMock"> FtMock</a>
-              </Button>
-            
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', px: 0  }}>
+            {/* <FtMocksIcon /> */}
+            <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>FtMocks</Typography>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 1 }}>
               <Button variant="text" color="info" size="small">
               <a href="Products"> Products</a>
               </Button>

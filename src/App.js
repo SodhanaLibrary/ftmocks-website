@@ -73,7 +73,7 @@ export default function App() {
           <Creating />
           {/* <Highlights /> */}
           <Divider />
-          <Pricing />
+          {/* <Pricing /> */}
           <Divider />
           <FAQ />
           <Divider />

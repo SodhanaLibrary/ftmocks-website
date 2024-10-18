@@ -49,7 +49,7 @@ export default function AppAppBar() {
           <Box sx={{ display: 'flex', alignItems: 'center', px: 0  }}>
             {/* <FtMocksIcon /> */}
             <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>FtMocks</Typography>
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 1 }}>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 5 }}>
               <Button variant="text" color="info" size="small">
               <a href="Products"> Products</a>
               </Button>
@@ -71,7 +71,7 @@ export default function AppAppBar() {
             </Box>
           </Box>
           
-          <Box
+          {/* <Box
             sx={{
               display: { xs: 'none', md: 'flex' },
               gap: 1,
@@ -84,7 +84,7 @@ export default function AppAppBar() {
             <Button color="primary" variant="contained" size="small">
               Sign up
             </Button>
-          </Box>
+          </Box> */}
           <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
               <MenuIcon />

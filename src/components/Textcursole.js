@@ -11,19 +11,19 @@ import Container from '@mui/material/Container';
 
 const steps = [
   {
-        label: 'FT mock',
+        label: 'Code Coverage',
         description: 'Achieving 100% code coverage for frontend projects is now easy.',
       },
       {
-        label: 'products',
+        label: 'Functional Test',
         description: 'Why limit yourself to just unit tests when you can write functional tests just as easily?',
       },
       {
-        label: 'Docs',
+        label: 'Mock Server',
         description: `Running a mock server for your test cases is now simple.`,
       },
       {
-        label: 'Team',
+        label: 'Mock Data',
         description: `It's also easier to maintain mock data.
         `,
       },

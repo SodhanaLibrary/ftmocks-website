@@ -12,7 +12,6 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import FtMocksIcon from './FtMocksIcon';
 import { Link as RouterLink } from 'react-router-dom';
 
 
@@ -64,7 +63,7 @@ export default function AppAppBar() {
             <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 5 }}>
               <Button
               // sx={buttonStyle('/Features')}
-              // component={RouterLink}
+              component={RouterLink}
               to="/Features" 
               variant="text"
                color="info"

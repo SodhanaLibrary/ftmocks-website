@@ -16,6 +16,8 @@ import TemplateFrame from './TemplateFrame';
 import Generat from './components/Generat';
 import Creating from './components/Creating';
 import Textcursole from './components/Textcursole';
+import { Box } from '@mui/material';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 const darkTheme = createTheme({
@@ -61,24 +63,23 @@ export default function App() {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline enableColorScheme />
         <AppAppBar />
-        {/* <Hero /> */}
-        <div>
+        <BrowserRouter>
+          <Routes>
+          {/* <Hero /> */}
           {/* <LogoCollection /> */}
-          <Textcursole/>
-          <Features />
-          <Divider />
-          <Generat/>
+          <Route path="/"   element={<Textcursole/>} />
+          <Route path="/Features"   element={<Features/>} />
+          <Route path="/Generat"   element={<Generat/>} /> 
           {/* <Testimonials /> */}
-          <Divider />
-          <Creating />
+          <Route path="/Creating"   element={<Creating/>} /> 
           {/* <Highlights /> */}
-          <Divider />
           {/* <Pricing /> */}
-          <Divider />
-          <FAQ />
-          <Divider />
-          <Footer />
-        </div>
+          <Route path="/FAQ" element={ <FAQ />} />
+          <Route path="/Footer" element={ <Footer />} />
+          </Routes>
+          </BrowserRouter>
       </ThemeProvider>
+      
+      
   );
 }

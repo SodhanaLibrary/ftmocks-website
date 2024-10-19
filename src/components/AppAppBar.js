@@ -13,6 +13,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import FtMocksIcon from './FtMocksIcon';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -30,10 +32,20 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function AppAppBar() {
   const [open, setOpen] = React.useState(false);
-
+  // const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  // const buttonStyle = (path) => ({
+  //   borderBottom: currentPath === path ? '2px solid' : 'none',
+  //   borderRadius: 0,
+  //   '&:hover': {
+  //     borderBottom: '2px solid',
+  //   },
+  // });
+
+  // console.log(currentPath);
 
   return (
     <AppBar
@@ -50,23 +62,51 @@ export default function AppAppBar() {
             {/* <FtMocksIcon /> */}
             <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>FtMocks</Typography>
             <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 5 }}>
+              <Button
+              // sx={buttonStyle('/Features')}
+              // component={RouterLink}
+              to="/Features" 
+              variant="text"
+               color="info"
+                size="small">
+               Features
+              </Button>
+
+
+
+              {/* <Button
+                sx={buttonStyle('/tests')}
+                component={RouterLink}
+                to="/tests"
+                variant="text"
+                color="info"
+                size="small"
+              >
+                Tests
+              </Button> */}
+
+
+
+
+
+
+
+
+
               <Button variant="text" color="info" size="small">
-              <a href="Products"> Products</a>
+              <a href="Generat"> Docs</a>
               </Button>
               <Button variant="text" color="info" size="small">
-              <a href="Docs"> Docs</a>
+              <a href="Creating"> Team</a>
               </Button>
-              <Button variant="text" color="info" size="small">
-              <a href="Team"> Team</a>
-              </Button>
-              <Button variant="text" color="info" size="small">
+              {/* <Button variant="text" color="info" size="small">
               <a href="Pricing"> Pricing</a>
+              </Button> */}
+              <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+              <a href="FAQ"> Support</a>
               </Button>
               <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-              <a href="Support"> Support</a>
-              </Button>
-              <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-              <a href="Blog">Blog </a>
+              <a href="Footer">Blog </a>
               </Button>
             </Box>
           </Box>

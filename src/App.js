@@ -62,8 +62,8 @@ export default function App() {
   return (
       <ThemeProvider theme={darkTheme}>
         <CssBaseline enableColorScheme />
-        <AppAppBar />
         <BrowserRouter>
+          <AppAppBar />
           <Routes>
           {/* <Hero /> */}
           {/* <LogoCollection /> */}

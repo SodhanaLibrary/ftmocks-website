@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { Link as RouterLink } from 'react-router-dom';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 
@@ -31,20 +32,9 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function AppAppBar() {
   const [open, setOpen] = React.useState(false);
-  // const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-
-  // const buttonStyle = (path) => ({
-  //   borderBottom: currentPath === path ? '2px solid' : 'none',
-  //   borderRadius: 0,
-  //   '&:hover': {
-  //     borderBottom: '2px solid',
-  //   },
-  // });
-
-  // console.log(currentPath);
 
   return (
     <AppBar
@@ -59,10 +49,9 @@ export default function AppAppBar() {
          
           <Box sx={{ display: 'flex', alignItems: 'center', px: 0  }}>
             {/* <FtMocksIcon /> */}
-            <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>FtMocks</Typography>
+            <Typography component={RouterLink} to="/" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1, textDecoration: 'none' }}>FtMocks</Typography>
             <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 5 }}>
               <Button
-              // sx={buttonStyle('/Features')}
               component={RouterLink}
               to="/Features" 
               variant="text"
@@ -70,28 +59,6 @@ export default function AppAppBar() {
                 size="small">
                Features
               </Button>
-
-
-
-              {/* <Button
-                sx={buttonStyle('/tests')}
-                component={RouterLink}
-                to="/tests"
-                variant="text"
-                color="info"
-                size="small"
-              >
-                Tests
-              </Button> */}
-
-
-
-
-
-
-
-
-
               <Button variant="text" color="info" size="small">
               <a href="Generat"> Docs</a>
               </Button>
@@ -110,20 +77,25 @@ export default function AppAppBar() {
             </Box>
           </Box>
           
-          {/* <Box
+          <Box
             sx={{
               display: { xs: 'none', md: 'flex' },
               gap: 1,
               alignItems: 'center',
             }}
           >
-            <Button color="primary" variant="text" size="small">
-              Sign in
-            </Button>
-            <Button color="primary" variant="contained" size="small">
-              Sign up
-            </Button>
-          </Box> */}
+            <IconButton
+              color="inherit"
+              aria-label="GitHub"
+              component="a"
+              href="https://github.com/SodhanaLibrary/ftmocks-server"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ mr: 1 }}
+            >
+              <GitHubIcon />
+            </IconButton>
+          </Box>
           <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
               <MenuIcon />

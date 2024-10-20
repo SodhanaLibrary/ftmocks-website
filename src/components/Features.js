@@ -1,274 +1,68 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import MuiChip from '@mui/material/Chip';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import React from 'react';
+import { Container, Typography, Box, Divider } from '@mui/material';
 
-import { styled } from '@mui/material/styles';
+const Feature = ({ imageSrc, title, description, index }) => (
+  <Container maxWidth="lg" sx={{ my: 8 }}>
+    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row' : 'row-reverse' },  alignItems: 'center', gap: 4 }}>
+      <Box sx={{ flex: 1, width: '100%' }}>
+        <Box
+          component="img"
+          src={imageSrc}
+          alt={title}
+          sx={{
+            width: '100%',
+            height: 'auto',
+            maxHeight: 400,
+            objectFit: 'cover',
+            borderRadius: 2,
+          }}
+        />
+      </Box>
+      <Box sx={{ flex: 1, width: '100%' }}>
+        <Typography variant="h4" gutterBottom color="secondary">
+          {title}
+        </Typography>
+        <Typography variant="body1">
+          {description}
+        </Typography>
+      </Box>
+    </Box>
+  </Container>
+);
 
-import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
-import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
-import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
-
-const items = [
-  {
-    icon: <ViewQuiltRoundedIcon />,
-    title: 'Setting',
-    description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
-    imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
-  },
-  // {
-  //   icon: <EdgesensorHighRoundedIcon />,
-  //   title: 'Mobile integration',
-  //   description:
-  //     'This item could provide information about the mobile app version of the product.',
-  //   imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
-  //   imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
-  // },
-  // {
-  //   icon: <DevicesRoundedIcon />,
-  //   title: 'Available on all platforms',
-  //   description:
-  //     'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
-  //   imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
-  //   imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
-  // },
-];
-
-const Chip = styled(MuiChip)(({ theme }) => ({
-  variants: [
+const Features = () => {
+  const features = [
     {
-      props: ({ selected }) => selected,
-      style: {
-        background:
-          'linear-gradient(to bottom right, hsl(210, 98%, 48%), hsl(210, 98%, 35%))',
-        color: 'hsl(0, 0%, 100%)',
-        borderColor: theme.palette.primary.light,
-        '& .MuiChip-label': {
-          color: 'hsl(0, 0%, 100%)',
-        },
-        ...theme.applyStyles('dark', {
-          borderColor: theme.palette.primary.dark,
-        }),
-      },
+      imageSrc: '/static/testing.png',
+      title: 'Functional Testing',
+      description: "Writing unit test cases for large frontend applications can be a daunting task for many frontend developers. In fact, it often feels like writing test cases takes more time and effort than developing the actual features. The question then arises: if functional tests can cover all the critical user flows and scenarios, why should developers invest time in writing unit tests? Wouldn't it make more sense to replace unit tests with comprehensive functional tests and move on?",
     },
-  ],
-}));
-
-function MobileLayout({ selectedItemIndex, handleItemClick, selectedFeature }) {
-  if (!items[selectedItemIndex]) {
-    return null;
-  }
+    {
+      imageSrc: '/static/mockData.png',
+      title: 'Mock Data',
+      description: "Creating and maintaining mock data for unit or functional tests can quickly become a nightmare. Imagine dealing with all the possible permutations and combinations of API responses for multiple test cases—each variation adding layers of complexity. Without an efficient system for managing this mock data, the entire process becomes overwhelming, turning what should be straightforward testing into a time-consuming and frustrating task. This is where FtMocks steps in. It offers a sophisticated and streamlined way to manage mock data, drastically reducing the chaos. With FtMocks, the burden of juggling endless test scenarios and mock responses is lifted, allowing you to focus on writing meaningful tests without drowning in data. It's a game-changer for anyone struggling to balance mock data and testing!",
+    },
+    {
+      imageSrc: '/static/mockServer.png',
+      title: 'Mock Server',
+      description: "How do you handle developing a frontend application with mock data? Do you spin up a mock server, or do you just sprinkle mock data directly into the code? While embedding mock data directly into the code might seem quick and easy, it can lead to sneaky regressions if you forget to remove them before shipping. A much cleaner and safer solution would be to use FtMocks. With FtMocks, you can create specific test cases with their corresponding mock data and run a mock server tailored to each scenario. This not only keeps your production code clean but also ensures your tests are accurate and easily maintainable. Say goodbye to the hassle of hard-coded mock data and hello to a more efficient, risk-free development workflow!",
+    },
+    {
+      imageSrc: '/static/codeCoverage.png',
+      title: 'Code Coverage',
+      description: 'Does your frontend application boast good code coverage? You might think unit tests are the only way to get there—but think again. You can achieve stellar code coverage without the hassle of writing countless unit tests. The secret? Functional tests combined with FtMocks for seamless mock data management. With FtMocks, you can easily create and maintain mock data for multiple test scenarios, paving the way for comprehensive functional tests. In fact, you can hit that elusive 100% code coverage by crafting functional tests that cover all the possible user flows and edge cases. No need to overload your code with unit tests—functional testing, powered by FtMocks, gets you to the finish line!',
+    },
+    // Add more features as needed
+  ];
 
   return (
-    <Box
-      sx={{
-        display: { xs: 'flex', sm: 'none' },
-        flexDirection: 'column',
-        gap: 2,
-      }}
-    >
-      <Box sx={{ display: 'flex', gap: 2, overflow: 'auto' }}>
-        {items.map(({ title }, index) => (
-          <Chip
-            size="medium"
-            key={index}
-            label={title}
-            onClick={() => handleItemClick(index)}
-            selected={selectedItemIndex === index}
-          />
-        ))}
-      </Box>
-      <Card variant="outlined">
-        <Box
-          sx={(theme) => ({
-            mb: 2,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            minHeight: 280,
-            backgroundImage: 'var(--items-imageLight)',
-            ...theme.applyStyles('dark', {
-              backgroundImage: 'var(--items-imageDark)',
-            }),
-          })}
-          style={
-            items[selectedItemIndex]
-              ? {
-                  '--items-imageLight': items[selectedItemIndex].imageLight,
-                  '--items-imageDark': items[selectedItemIndex].imageDark,
-                }
-              : {}
-          }
-        />
-        <Box sx={{ px: 2, pb: 2 }}>
-          <Typography
-            gutterBottom
-            sx={{ color: 'text.primary', fontWeight: 'medium' }}
-          >
-            {selectedFeature.title}
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1.5 }}>
-            {selectedFeature.description}
-          </Typography>
-        </Box>
-      </Card>
+    <Box>
+      {features.map((feature, index) => (
+        <Feature key={index} {...feature} index={index} />
+      ))}
+      <Divider sx={{ my: 4 }} />
     </Box>
   );
-}
-
-MobileLayout.propTypes = {
-  handleItemClick: PropTypes.func.isRequired,
-  selectedFeature: PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    icon: PropTypes.element,
-    imageDark: PropTypes.string.isRequired,
-    imageLight: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
-  selectedItemIndex: PropTypes.number.isRequired,
 };
 
-export { MobileLayout };
-
-export default function Features() {
-  const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
-
-  const handleItemClick = (index) => {
-    setSelectedItemIndex(index);
-  };
-
-  const selectedFeature = items[selectedItemIndex];
-
-  return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 16 } }}>
-      <Box sx={{ width: { sm: '100%', md: '60%' } }}>
-        <Typography
-          component="h2"
-          variant="h4"
-          gutterBottom
-          sx={{ color: 'text.primary' }}
-        >
-          Product features
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{ color: 'text.secondary', mb: { xs: 2, sm: 4 } }}
-        >
-          Provide a brief overview of the key features of the product. For example,
-          you could list the number of features, their types or benefits, and
-          add-ons.
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row-reverse' },
-          gap: 2,
-        }}
-      >
-        <div>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              flexDirection: 'column',
-              gap: 2,
-              height: '100%',
-            }}
-          >
-            {items.map(({ icon, title, description }, index) => (
-              <Box
-                key={index}
-                component={Button}
-                onClick={() => handleItemClick(index)}
-                sx={[
-                  (theme) => ({
-                    p: 2,
-                    height: '100%',
-                    width: '100%',
-                    '&:hover': {
-                      backgroundColor: theme.palette.action.hover,
-                    },
-                  }),
-                  selectedItemIndex === index && {
-                    backgroundColor: 'action.selected',
-                  },
-                ]}
-              >
-                <Box
-                  sx={[
-                    {
-                      width: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'left',
-                      gap: 1,
-                      textAlign: 'left',
-                      textTransform: 'none',
-                      color: 'text.secondary',
-                    },
-                    selectedItemIndex === index && {
-                      color: 'text.primary',
-                    },
-                  ]}
-                >
-                  {icon}
-
-                  <Typography variant="h6">{title}</Typography>
-                  <Typography variant="body2">{description}</Typography>
-                </Box>
-              </Box>
-            ))}
-          </Box>
-          <MobileLayout
-            selectedItemIndex={selectedItemIndex}
-            handleItemClick={handleItemClick}
-            selectedFeature={selectedFeature}
-          />
-        </div>
-        <Box
-          sx={{
-            display: { xs: 'none', sm: 'flex' },
-            width: { xs: '100%', md: '70%' },
-            height: 'var(--items-image-height)',
-          }}
-        >
-          <Card
-            variant="outlined"
-            sx={{
-              height: '100%',
-              width: '100%',
-              display: { xs: 'none', sm: 'flex' },
-              pointerEvents: 'none',
-            }}
-          >
-            <Box
-              sx={(theme) => ({
-                m: 'auto',
-                width: 420,
-                height: 500,
-                backgroundSize: 'contain',
-                backgroundImage: 'var(--items-imageLight)',
-                ...theme.applyStyles('dark', {
-                  backgroundImage: 'var(--items-imageDark)',
-                }),
-              })}
-              style={
-                items[selectedItemIndex]
-                  ? {
-                      '--items-imageLight': items[selectedItemIndex].imageLight,
-                      '--items-imageDark': items[selectedItemIndex].imageDark,
-                    }
-                  : {}
-              }
-            />
-          </Card>
-        </Box>
-      </Box>
-    </Container>
-  );
-}
+export default Features;

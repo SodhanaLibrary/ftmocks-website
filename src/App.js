@@ -15,7 +15,7 @@ import getMPTheme from './theme/getMPTheme';
 import TemplateFrame from './TemplateFrame';
 import Generat from './components/Generat';
 import Creating from './components/Creating';
-import Textcursole from './components/Textcursole';
+import Home from './components/Home';
 import { Box } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -67,7 +67,7 @@ export default function App() {
           <Routes>
           {/* <Hero /> */}
           {/* <LogoCollection /> */}
-          <Route path="/"   element={<Textcursole/>} />
+          <Route path="/"   element={<Home/>} />
           <Route path="/Features"   element={<Features/>} />
           <Route path="/Generat"   element={<Generat/>} /> 
           {/* <Testimonials /> */}

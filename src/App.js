@@ -1,23 +1,16 @@
 import * as React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
+import Box from '@mui/material/Box';
 import AppAppBar from './components/AppAppBar';
-import Hero from './components/Hero';
-import LogoCollection from './components/LogoCollection';
-import Highlights from './components/Highlights';
-import Pricing from './components/Pricing';
-import Features from './components/Features';
-import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import getMPTheme from './theme/getMPTheme';
-import TemplateFrame from './TemplateFrame';
-import Generat from './components/Generat';
-import Creating from './components/Creating';
 import Home from './components/Home';
-import { Box } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Docs from './components/docs/Docs';
+import ContactSupport from './components/ContactSupport';
+import Contributors from './components/Contributors';
 
 
 const darkTheme = createTheme({
@@ -65,19 +58,18 @@ export default function App() {
         <BrowserRouter>
           <AppAppBar />
           <Routes>
-          {/* <Hero /> */}
-          {/* <LogoCollection /> */}
-          <Route path="/"   element={<Home/>} />
-          <Route path="/Features"   element={<Features/>} />
-          <Route path="/Generat"   element={<Generat/>} /> 
-          {/* <Testimonials /> */}
-          <Route path="/Creating"   element={<Creating/>} /> 
-          {/* <Highlights /> */}
-          {/* <Pricing /> */}
-          <Route path="/FAQ" element={ <FAQ />} />
-          <Route path="/Footer" element={ <Footer />} />
+            <Route path="/"   element={<Home/>} />
+            <Route path="/docs"   element={<Docs/>} /> 
+            <Route path="/support"   element={<ContactSupport/>} /> 
+            <Route path="/contributors"   element={<Box sx={{mt: 11}}>
+              <Contributors repoOwner="SodhanaLibrary" repoName="ftmocks-server"/>
+              <Contributors repoOwner="SodhanaLibrary" repoName="ftmocks-tool"/>
+              <Contributors repoOwner="SodhanaLibrary" repoName="ftmocks-website"/>
+            </Box>} /> 
+            <Route path="/FAQ" element={ <FAQ />} />
           </Routes>
-          </BrowserRouter>
+          <Footer />
+        </BrowserRouter>
       </ThemeProvider>
       
       

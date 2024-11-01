@@ -55,11 +55,6 @@ export default function Home() {
       <Divider />
       <Features />
     </Container>
-    <Box sx={{ mt: 4, mb: 2, textAlign: 'center' }}>
-      <Typography variant="body2" color="text.secondary">
-        © {new Date().getFullYear()} FtMocks. All rights reserved.
-      </Typography>
-    </Box>
     </Box>
   );
 }

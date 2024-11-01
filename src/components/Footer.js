@@ -26,19 +26,9 @@ function Copyright() {
   );
 }
 
-export default function Footer() {
-  return (
-    <Container
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: { xs: 4, sm: 8 },
-        py: { xs: 8, sm: 10 },
-        textAlign: { sm: 'center', md: 'left' },
-      }}
-    >
-      <Box
+function renderNewsLetter() {
+  return (<>
+  <Box
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'row' },
@@ -215,6 +205,27 @@ export default function Footer() {
             <LinkedInIcon />
           </IconButton>
         </Stack>
+      </Box>
+      </>)
+};
+
+export default function Footer() {
+  return (
+    <Container
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: { xs: 4, sm: 8 },
+        py: { xs: 8, sm: 10 },
+        textAlign: { sm: 'center', md: 'left' },
+      }}
+    >
+      {/* {renderNewsLetter()} */}
+      <Box sx={{ mt: 4, mb: 2, textAlign: 'center' }}>
+        <Typography variant="body2" color="text.secondary">
+          © {new Date().getFullYear()} FtMocks. All rights reserved.
+        </Typography>
       </Box>
     </Container>
   );

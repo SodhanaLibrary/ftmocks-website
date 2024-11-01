@@ -43,7 +43,9 @@ const Contributors = ({ repoOwner, repoName }) => {
                       <Typography variant="h6" gutterBottom>
                         {contributor.login}
                       </Typography>
-                      <Typography color="textSecondary">
+                      <Typography
+                      data-testid = "navigate-contribution-btn"
+                      color="textSecondary">
                         Contributions: {contributor.contributions}
                       </Typography>
                     </CardContent>

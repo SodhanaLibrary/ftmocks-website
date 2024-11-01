@@ -32,7 +32,7 @@ const Sidebar = ({setSection, section}) => (
             cursor: 'pointer',
           }}
           >
-          <ListItemText primary={item.title} />
+          <ListItemText data-testid={item.testId} primary={item.title} />
         </ListItem>
       ))}
     </List>

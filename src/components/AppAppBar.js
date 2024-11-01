@@ -51,28 +51,53 @@ export default function AppAppBar() {
             {/* <FtMocksIcon /> */}
             <Typography component={RouterLink} to="/" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1, textDecoration: 'none' }}>FtMocks</Typography>
             <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 5 }}>
-              <Button
-              component={RouterLink}
-              to="/Features" 
-              variant="text"
-               color="info"
-                size="small">
+              {/* <Button
+                component={RouterLink}
+                to="/Features" 
+                variant="text"
+                color="info"
+                size="small"
+              >
                Features
-              </Button>
-              <Button variant="text" color="info" size="small">
-              <a href="Generat"> Docs</a>
-              </Button>
-              <Button variant="text" color="info" size="small">
-              <a href="Creating"> Team</a>
-              </Button>
-              {/* <Button variant="text" color="info" size="small">
-              <a href="Pricing"> Pricing</a>
               </Button> */}
-              <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-              <a href="FAQ"> Support</a>
+              <Button
+                component={RouterLink}
+                to="/" 
+                variant="text"
+                color="info"
+                size="small"
+              >
+               Home
               </Button>
-              <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-              <a href="Footer">Blog </a>
+              <Button
+                component={RouterLink}
+                to="/docs" 
+                variant="text"
+                color="info"
+                size="small"
+              >
+               Docs
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/contributors" 
+                variant="text"
+                color="info"
+                size="small"
+              >
+               Contributors
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/support" 
+                variant="text"
+                color="info"
+                size="small"
+              >
+               Support
+              </Button>
+              <Button target='_blank' href="https://blog.ftmocks.com" variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+                Blog
               </Button>
             </Box>
           </Box>

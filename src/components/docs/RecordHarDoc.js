@@ -1,92 +1,96 @@
-import React, {useState} from 'react';
-import { Box, Typography,  Link, Button } from '@mui/material';
-import {commonCodeStye} from './utils';
+import React from 'react';
+import { Accordion, AccordionSummary, AccordionDetails, Typography, List, Box, ListItem, ListItemText, Container } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const Installation = () => {
+const HarInfoComponent = () => {
   return (
-        <Box sx={{ padding: 4 }}>
-          {/* Heading */}
-          <Typography variant="h4" gutterBottom>
-            Getting Started
+    <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
+      <Typography variant="h4" gutterBottom>
+        Understanding HAR Files
+      </Typography>
+
+      {/* Overview */}
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography variant="h6">What is a HAR File?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            A HAR (HTTP Archive) file is a format used to log interactions between a web browser and a site. It records details about network requests and responses, including metadata like headers, content, and loading times.
           </Typography>
-    
-          {/* Prerequisites Section */}
-          <Typography variant="h5" gutterBottom>
-            Prerequisites
+        </AccordionDetails>
+      </Accordion>
+
+      {/* Uses of HAR Files */}
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography variant="h6">Uses of HAR Files</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <List>
+            <ListItem>
+              <ListItemText primary="Performance Analysis" secondary="Identify bottlenecks by analyzing loading times for assets like images, scripts, or CSS." />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Error Debugging" secondary="Inspect HTTP status codes to spot failed requests or server issues." />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Data Monitoring" secondary="Capture API responses and data flows to verify data exchanges and security." />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Network Optimization" secondary="Optimize delivery and caching strategies by understanding request sequence and duration." />
+            </ListItem>
+          </List>
+        </AccordionDetails>
+      </Accordion>
+
+      {/* Generating a HAR File */}
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography variant="h6">How to Generate a HAR File</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Most modern browsers provide options for generating HAR files. You can usually find it under the "Network" tab in Developer Tools. Start the recording, interact with the site, then export the data as a HAR file.
           </Typography>
-          <Typography variant="body1" gutterBottom>
-            To run this project, ensure you have the following installed on your machine:
-          </Typography>
-          <ul>
-            <li>
-              <Typography variant="body1">
-                <Link href="https://nodejs.org/" target="_blank" rel="noopener">
-                  Node.js
-                </Link>{' '}
-                (version 20 or later)
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body1">
-                <Link href="https://www.npmjs.com/" target="_blank" rel="noopener">
-                  npm
-                </Link>{' '}
-                (usually included with Node.js)
-              </Typography>
-            </li>
-          </ul>
-    
-          {/* Installation Section */}
-          <Typography variant="h5" gutterBottom>
-            Installation
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            1. Clone the repository:
-          </Typography>
-          <Box component="pre" sx={commonCodeStye}>
-            git clone https://github.com/SodhanaLibrary/ftmocks-server.git
+          <Box sx={{p: 2}}>
+          <img
+            src="/static/record_har_file.png"
+            alt="export HAR file"
+            loading="lazy"
+            width="100%"
+          />
           </Box>
-          <Typography variant="body1" gutterBottom>
-            2. Navigate into the project directory:
+        </AccordionDetails>
+      </Accordion>
+
+      {/* Structure of a HAR File */}
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography variant="h6">Structure of a HAR File</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            A HAR file is a JSON file with several sections:
           </Typography>
-          <Box component="pre" sx={commonCodeStye}>
-            cd ftmocks-server
-          </Box>
-    
-          {/* Configuration Section */}
-          <Typography variant="h5" gutterBottom>
-            Configuration
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            1. Create a <code>my-project.env</code> file for your project.
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            2. Add the following environment variables in <code>my-project.env</code> in the project root:
-          </Typography>
-          <Box component="pre" sx={commonCodeStye}>
-            MOCK_DIR=/Users/srinivas.dasari/Documents/CursorWorkSpace/ftmocks-server/sample/my-project
-            <br />
-            PORT=5000
-            <br />
-            MOCK_DEFAULT_FILE=default.json
-            <br />
-            MOCK_DEFAULT_DIR=defaultMocks
-            <br />
-            MOCK_TEST_FILE=tests.json
-          </Box>
-    
-          {/* Running the Project Section */}
-          <Typography variant="h5" gutterBottom>
-            Running the Project
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            To start the project, use:
-          </Typography>
-          <Box component="pre" sx={commonCodeStye}>
-            npm start my-project
-          </Box>
-        </Box>
+          <List>
+            <ListItem>
+              <ListItemText primary="log" secondary="The main container for all HAR file data." />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="entries" secondary="Each HTTP request and response." />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="pages" secondary="High-level data for each page load, including total load time." />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="request & response" secondary="Details for each HTTP request and response, such as headers, timings, and payloads." />
+            </ListItem>
+          </List>
+        </AccordionDetails>
+      </Accordion>
+    </Container>
   );
 };
 
-export default Installation;
+export default HarInfoComponent;

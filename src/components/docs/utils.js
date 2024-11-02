@@ -1,5 +1,7 @@
 // contentData.js
 const contentData = [
+    { testId: 'Naveitem-Howit-Works',
+      title: 'How It Works', text: 'This is the introduction section content.' },
     { testId: 'Naveitem-Getting-Started',
        title: 'Getting Started', text: 'This is the introduction section content.' },
     {testId: 'Naveitem-Record-HAR-file',

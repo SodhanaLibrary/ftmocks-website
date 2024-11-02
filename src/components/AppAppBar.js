@@ -9,6 +9,7 @@ import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
+import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -145,20 +146,20 @@ export default function AppAppBar() {
                   </IconButton>
                 </Box>
                 <Divider sx={{ my: 3 }} />
-                <MenuItem>products</MenuItem>
-                <MenuItem>Docs</MenuItem>
-                <MenuItem>Team</MenuItem>
-                <MenuItem>pricing</MenuItem>
-                <MenuItem>support</MenuItem>
-                <MenuItem>Blog</MenuItem>
+                <MenuItem onClick={toggleDrawer(false)} component={RouterLink} to="/" >Home</MenuItem>
+                <MenuItem onClick={toggleDrawer(false)} component={RouterLink} to="/docs" >Docs</MenuItem>
+                <MenuItem onClick={toggleDrawer(false)} component={RouterLink} to="/contributors" >Contributors</MenuItem>
+                <MenuItem onClick={toggleDrawer(false)} component={RouterLink} to="/support">Support</MenuItem>
+                <MenuItem><Link target='_blank' href="https://blog.ftmocks.com">Blog</Link></MenuItem>
                 <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
-                    Sign in
+                  <Button 
+                    component="a"
+                    href="https://github.com/SodhanaLibrary/ftmocks-server"
+                    target="_blank"
+                    color="primary" variant="contained" 
+                    fullWidth
+                  >
+                    GitHub Repo
                   </Button>
                 </MenuItem>
               </Box>

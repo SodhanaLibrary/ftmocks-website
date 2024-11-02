@@ -60,7 +60,8 @@ export default function AppAppBar() {
               >
                Features
               </Button> */}
-              <Button
+              <Button 
+              data-testid = "navigation-feature-btn"
                 component={RouterLink}
                 to="/" 
                 variant="text"
@@ -70,6 +71,7 @@ export default function AppAppBar() {
                Home
               </Button>
               <Button
+              data-testid = "navigation-docs-btn"
                 component={RouterLink}
                 to="/docs" 
                 variant="text"
@@ -79,6 +81,7 @@ export default function AppAppBar() {
                Docs
               </Button>
               <Button
+               data-testid = "navigation-contributors-btn"
                 component={RouterLink}
                 to="/contributors" 
                 variant="text"
@@ -88,6 +91,7 @@ export default function AppAppBar() {
                Contributors
               </Button>
               <Button
+              data-testid = "navigation-support-btn"
                 component={RouterLink}
                 to="/support" 
                 variant="text"
@@ -96,7 +100,9 @@ export default function AppAppBar() {
               >
                Support
               </Button>
-              <Button target='_blank' href="https://blog.ftmocks.com" variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+              <Button
+              data-testid = "navigation-Blog-btn"
+               target='_blank' href="https://blog.ftmocks.com" variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                 Blog
               </Button>
             </Box>

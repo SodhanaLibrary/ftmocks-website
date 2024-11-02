@@ -37,7 +37,9 @@ const Installation = () => {
           </ul>
     
           {/* Installation Section */}
-          <Typography variant="h5" gutterBottom>
+          <Typography 
+           testId = "navigation- Installation"
+          variant="h5" gutterBottom>
             Installation
           </Typography>
           <Typography variant="body1" gutterBottom>

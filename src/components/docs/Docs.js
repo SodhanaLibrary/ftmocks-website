@@ -27,10 +27,14 @@ function Docs() {
             {section === 3 && <TestCasesDoc />}
             {section === 4 && <MockServerDoc />}
             <Box display="flex" justifyContent="space-between">
-                <Button variant="contained" onClick={() => handleNavigation(-1)} disabled={section === 0}>
+                <Button
+                data-testid = "navigation-previous-btn"
+                variant="contained" onClick={() => handleNavigation(-1)} disabled={section === 0}>
                 Previous
                 </Button>
-                <Button variant="contained" onClick={() => handleNavigation(1)} disabled={section === contentData.length - 1}>
+                <Button
+                data-testid = "navigation-next-btn"
+                variant="contained" onClick={() => handleNavigation(1)} disabled={section === contentData.length - 1}>
                 Next
                 </Button>
             </Box>

@@ -34,11 +34,7 @@ export default function App() {
     if (savedMode) {
       setMode(savedMode);
     } else {
-      // If no preference is found, it uses system preference
-      const systemPrefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      ).matches;
-      setMode(systemPrefersDark ? 'dark' : 'light');
+      setMode('dark');
     }
   }, []);
 

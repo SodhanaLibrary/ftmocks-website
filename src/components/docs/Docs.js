@@ -7,6 +7,7 @@ import MockServerDoc from './MockServerDoc';
 import DefaultMockDataDoc from './DefaultMockDataDoc';
 import RecordHarDoc from './RecordHarDoc';
 import TestCasesDoc from './TestCasesDoc';
+import HowItWorks from './HowItWorks';
 
 function Docs() {
   const [section, setSection] = useState(0);
@@ -21,11 +22,12 @@ function Docs() {
         <Box sx={{display: 'flex', mt: 7}}>
             <Sidebar setSection={setSection} section={section}/>
             <Box sx={{ flexGrow: 1, p: 3, height: '100vh', overflowY: 'scroll' }}>
-            {section === 0 && <Installation />}
-            {section === 1 && <RecordHarDoc />}
-            {section === 2 && <DefaultMockDataDoc />}
-            {section === 3 && <TestCasesDoc />}
-            {section === 4 && <MockServerDoc />}
+            {section === 0 && <HowItWorks />}
+            {section === 1 && <Installation />}
+            {section === 2 && <RecordHarDoc />}
+            {section === 3 && <DefaultMockDataDoc />}
+            {section === 4 && <TestCasesDoc />}
+            {section === 5 && <MockServerDoc />}
             <Box display="flex" justifyContent="space-between">
                 <Button
                 data-testid = "navigation-previous-btn"

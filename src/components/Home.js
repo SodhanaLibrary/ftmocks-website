@@ -43,14 +43,17 @@ export default function Home() {
     <Box>
     <Container maxWidth="lg">
       <Box sx={{ flexGrow: 1, pt: 15, pb: 10 }}>
-        <Container square elevation={3} sx={{ p: 2,display: 'flex'}}>
-          <Typography sx={{textAlign: 'center', width: '100%', color: 'secondary.main'}} variant="h2">{steps[activeStep].label}</Typography>
-        </Container>
-        <Box sx={{ height: 250, display: 'flex', alignItems: 'center', justifyContent: 'center', mt: 2 }}>
-          <Typography variant="h3" align="center">
-            {steps[activeStep].description}
-          </Typography>
-        </Box>
+        <iframe
+          src={`https://www.youtube.com/embed/9dByVcyyRBA`}
+          title="FtMocks Demo - Achieve 80% Code coverage for your frontend applications in less than 3 minutes"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{
+            width: "100%",
+            height: "500px",
+            border: "none",
+          }}
+        ></iframe>
       </Box>
       <Divider />
       <Features />

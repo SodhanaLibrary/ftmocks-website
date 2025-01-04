@@ -68,11 +68,9 @@ const Installation = () => {
             <br />
             PORT=5000
             <br />
-            MOCK_DEFAULT_FILE=default.json
+            PREFERRED_SERVER_PORTS=[4051]
             <br />
-            MOCK_DEFAULT_DIR=defaultMocks
-            <br />
-            MOCK_TEST_FILE=tests.json
+            MOCK_RECORDER_LIMIT=300
           </Box>
     
           {/* Running the Project Section */}

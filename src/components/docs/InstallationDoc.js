@@ -52,7 +52,13 @@ const Installation = () => {
           <Box component="pre" sx={commonCodeStye}>
             cd ftmocks-server
           </Box>
-    
+          <Typography variant="body1" gutterBottom>
+            3. Install dependencies:
+          </Typography>
+          <Box component="pre" sx={commonCodeStye}>
+            npm install
+          </Box>
+          
           {/* Configuration Section */}
           <Typography variant="h5" gutterBottom>
             Configuration
@@ -64,7 +70,7 @@ const Installation = () => {
             2. Add the following environment variables in <code>my-project.env</code> in the project root:
           </Typography>
           <Box component="pre" sx={commonCodeStye}>
-            MOCK_DIR=/Users/srinivas.dasari/Documents/CursorWorkSpace/ftmocks-server/sample/my-project
+            MOCK_DIR=./example/my-project/testMockData
             <br />
             PORT=5000
             <br />

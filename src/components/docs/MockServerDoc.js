@@ -9,7 +9,19 @@ const Installation = () => {
           <Typography variant="h4" gutterBottom>
             Mock Server
           </Typography>
-    
+          <Box>
+            <iframe
+              src={`https://www.youtube.com/embed/ql5iMiOkbf8`}
+              title="Create Mock Data and Mock Server from HAR File - Using FtMocks"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                width: "100%",
+                height: "500px",
+                border: "none",
+              }}
+            ></iframe>
+          </Box>
           <Typography variant="body1" gutterBottom>
           Now, select a test case and start the mock server. The server will prioritize serving responses from the mock data of the selected test case. If a matching response isn't found in the test case data, it will fall back to the default mock data to ensure a complete response.
           </Typography>

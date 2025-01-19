@@ -35,7 +35,19 @@ const Installation = () => {
               </Typography>
             </li>
           </ul>
-    
+          <Box>
+            <iframe
+              src={`https://www.youtube.com/embed/afWgQKUodqA`}
+              title="How to setup FtMocks and run example project with it"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                width: "100%",
+                height: "500px",
+                border: "none",
+              }}
+            ></iframe>
+          </Box>
           {/* Installation Section */}
           <Typography variant="h5" gutterBottom>
             Installation

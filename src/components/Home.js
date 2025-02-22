@@ -44,7 +44,7 @@ export default function Home() {
     <Container maxWidth="lg">
       <Box sx={{ flexGrow: 1, pt: 15, pb: 10 }}>
         <iframe
-          src={`https://www.youtube.com/embed/9dByVcyyRBA`}
+          src={`https://www.youtube.com/embed/e6mhFe61Xqk`}
           title="FtMocks Demo - Achieve 80% Code coverage for your frontend applications in less than 3 minutes"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

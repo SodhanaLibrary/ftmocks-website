@@ -37,7 +37,7 @@ const Installation = () => {
           </ul>
           <Box>
             <iframe
-              src={`https://www.youtube.com/embed/afWgQKUodqA`}
+              src={`https://www.youtube.com/embed/_-idF5dU4YA`}
               title="How to setup FtMocks and run example project with it"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

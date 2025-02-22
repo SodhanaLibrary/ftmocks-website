@@ -11,7 +11,7 @@ const Installation = () => {
           </Typography>
           <Box>
             <iframe
-              src={`https://www.youtube.com/embed/ql5iMiOkbf8`}
+              src={`https://www.youtube.com/embed/MmY5NQJWYNA`}
               title="Create Mock Data and Mock Server from HAR File - Using FtMocks"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

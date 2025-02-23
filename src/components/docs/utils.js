@@ -12,7 +12,11 @@ const contentData = [
        title: 'Test Cases', text: 'This section explains how to use the application.' },
     { testId: 'Naveitem-Mock-Server',
       title: 'Mock Server', text: 'This section explains how to use the application.' },
-    // Add more sections as needed
+   { testId: 'Naveitem-Mock-Server',
+         title: 'ReactJS', text: 'This section explains how to use the FtMocks for React application.' },
+   { testId: 'Naveitem-Mock-Server',
+            title: 'Playwright', text: 'This section explains how to use the FtMocks for Playwright automation.' },
+       // Add more sections as needed
   ];
 
 export const commonCodeStye = { backgroundColor: 'secondary.light', color: 'secondary.contrastText', padding: 2, borderRadius: 1 };

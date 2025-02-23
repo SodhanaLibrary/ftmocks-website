@@ -3,6 +3,8 @@ import { Box, Button, Container } from '@mui/material';
 import Sidebar from './Sidebar';
 import contentData from './utils'; // Content data for each section
 import Installation from './InstallationDoc';
+import ReactExample from './ReactExampleDoc';
+import PlaywrightExample from './PlaywrightExampleDoc';
 import MockServerDoc from './MockServerDoc';
 import DefaultMockDataDoc from './DefaultMockDataDoc';
 import RecordHarDoc from './RecordHarDoc';
@@ -28,6 +30,8 @@ function Docs() {
             {section === 3 && <DefaultMockDataDoc />}
             {section === 4 && <TestCasesDoc />}
             {section === 5 && <MockServerDoc />}
+            {section === 6 && <ReactExample />}
+            {section === 7 && <PlaywrightExample />}
             <Box display="flex" justifyContent="space-between">
                 <Button
                 data-testid = "navigation-previous-btn"

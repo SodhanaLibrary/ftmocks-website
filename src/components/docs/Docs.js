@@ -8,6 +8,9 @@ import PlaywrightExample from "./PlaywrightExampleDoc";
 import MockServerDoc from "./MockServerDoc";
 import DefaultMockDataDoc from "./DefaultMockDataDoc";
 import RecordHarDoc from "./RecordHarDoc";
+import EnvironmentVariablesDoc from "./EnvironmentVariablesDoc";
+import TestOptimizeTabDoc from "./TestOptimizeTabDoc";
+import GeneratingDocsTabDoc from "./GeneratingDocsTabDoc";
 import TestCasesDoc from "./TestCasesDoc";
 import HowItWorks from "./HowItWorks";
 
@@ -29,9 +32,13 @@ function Docs() {
           {section === 2 && <DefaultMockDataDoc />}
           {section === 3 && <TestCasesDoc />}
           {section === 4 && <MockServerDoc />}
-          {section === 5 && <PlaywrightExample />}
-          {section === 6 && <ReactExample />}
-          {section === 7 && <RecordHarDoc />}
+          {section === 5 && <EnvironmentVariablesDoc />}
+          {section === 6 && <PlaywrightExample />}
+          {section === 7 && <ReactExample />}
+          {section === 8 && <RecordHarDoc />}
+          {section === 9 && <TestOptimizeTabDoc />}
+          {section === 10 && <GeneratingDocsTabDoc />}
+
           <Box display="flex" justifyContent="space-between">
             <Button
               data-testid="navigation-previous-btn"

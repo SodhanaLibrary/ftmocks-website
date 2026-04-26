@@ -26,6 +26,11 @@ const contentData = [
     text: "This section explains how to use the application.",
   },
   {
+    testId: "Naveitem-Environment-Variables",
+    title: "Environment variables",
+    text: "Reference for ftmocks-server environment variables.",
+  },
+  {
     testId: "Naveitem-Mock-Server",
     title: "Playwright",
     text: "This section explains how to use the FtMocks for Playwright automation.",
@@ -40,7 +45,16 @@ const contentData = [
     title: "Record HAR file",
     text: "This section covers the installation process.",
   },
-  // Add more sections as needed
+  {
+    testId: "Naveitem-Test-Optimize-Tab",
+    title: "Optimize tab",
+    text: "Test Optimizer: unused mocks, strict mode, default mock management.",
+  },
+  {
+    testId: "Naveitem-Generating-Docs-Tab",
+    title: "Generating docs",
+    text: "Documentation tab: record events, run for screenshots, walkthrough and visual testing.",
+  },
 ];
 
 export const commonCodeStye = {

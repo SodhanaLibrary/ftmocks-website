@@ -20,8 +20,8 @@ const EnvironmentVariablesDoc = () => {
         Environment variables (ftmocks-server)
       </Typography>
       <Typography variant="body1" gutterBottom sx={{ mb: 3 }}>
-        FtMocks loads a project environment file (for example{" "}
-        <code>my-project.env</code> or a path passed with{" "}
+        FtMocks loads a project environment file (typically{" "}
+        <code>ftmocks.env</code>, or a path passed with{" "}
         <code>--envfile=</code>) when you start the server. Paths such as{" "}
         <code>MOCK_DIR</code> that are not absolute are resolved relative to the
         directory containing that file. A separate <code>.env</code> in the
@@ -37,8 +37,7 @@ const EnvironmentVariablesDoc = () => {
         Absolute or relative path to the mock data root. Holds{" "}
         <code>tests.json</code>, per-test folders (<code>test_*</code>),{" "}
         <code>defaultMocks</code>, <code>mockServer.config.json</code>, API spec
-        uploads, <code>vault.json</code> (secrets), and recorded logs. Required
-        for normal operation.
+        uploads, and recorded logs. Required for normal operation.
       </Var>
 
       <Var name="PORT">
@@ -98,12 +97,6 @@ const EnvironmentVariablesDoc = () => {
         or normalizing URLs (for example volatile tracking params).
       </Var>
 
-      <Var name="CRYPTO_SALT">
-        Optional salt string for encrypting values in <code>vault.json</code>.
-        If unset, the server uses a built-in static salt (less ideal for
-        production secrets).
-      </Var>
-
       <Typography variant="h5" gutterBottom sx={{ mt: 3 }}>
         FtMocks repo <code>.env</code>
       </Typography>
@@ -132,10 +125,15 @@ const EnvironmentVariablesDoc = () => {
       </Typography>
 
       <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-        When running <code>mcp-server.js</code>, if <code>MOCK_DIR</code> is
-        not already set, the process may look for a project env file under{" "}
-        <code>FTMOCKS_WORKSPACE</code> or <code>WORKSPACE_ROOT</code> to locate
-        your workspace before applying defaults.
+        The MCP server (<code>mcp/index.js</code>, started with{" "}
+        <code>npm run mcp</code>) only forwards HTTP requests to a running
+        ftmocks-server API — it does not read <code>MOCK_DIR</code> itself.
+        It resolves the API base URL in this order:{" "}
+        <code>FTMOCKS_API_BASE_URL</code>, then <code>FTMOCKS_SERVER_URL</code>
+        , then <code>http://localhost:$&#123;PORT&#125;</code> (or port{" "}
+        <code>5000</code> if <code>PORT</code> is unset). Set{" "}
+        <code>FTMOCKS_API_BASE_URL</code> in your MCP client config to match
+        the host and port where FtMocks is actually listening.
       </Typography>
 
       <Typography variant="h5" gutterBottom sx={{ mt: 3 }}>

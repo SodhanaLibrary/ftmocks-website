@@ -11,6 +11,11 @@ const contentData = [
     text: "This is the introduction section content.",
   },
   {
+    testId: "Naveitem-Adding-Project",
+    title: "Adding a Project",
+    text: "How to add and switch between projects from the FtMocks UI.",
+  },
+  {
     testId: "Naveitem-Default- Mock- Data",
     title: "Default Mock Data",
     text: "This section explains how to use the application.",
@@ -19,6 +24,11 @@ const contentData = [
     testId: "Naveitem-Test-Cases",
     title: "Test Cases",
     text: "This section explains how to use the application.",
+  },
+  {
+    testId: "Naveitem-Record-And-Codegen",
+    title: "Recording & Codegen",
+    text: "Record mock data, generate Playwright code, and run tests from the Record tab.",
   },
   {
     testId: "Naveitem-Mock-Server",
@@ -31,12 +41,12 @@ const contentData = [
     text: "Reference for ftmocks-server environment variables.",
   },
   {
-    testId: "Naveitem-Mock-Server",
+    testId: "Naveitem-Playwright",
     title: "Playwright",
     text: "This section explains how to use the FtMocks for Playwright automation.",
   },
   {
-    testId: "Naveitem-Mock-Server",
+    testId: "Naveitem-ReactJS",
     title: "ReactJS",
     text: "This section explains how to use the FtMocks for React application.",
   },
@@ -54,6 +64,11 @@ const contentData = [
     testId: "Naveitem-Generating-Docs-Tab",
     title: "Generating docs",
     text: "Documentation tab: record events, run for screenshots, walkthrough and visual testing.",
+  },
+  {
+    testId: "Naveitem-Mcp-Tools",
+    title: "MCP Tools",
+    text: "Model Context Protocol server and tool reference for ftmocks-server.",
   },
 ];
 

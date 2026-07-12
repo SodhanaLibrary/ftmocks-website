@@ -13,6 +13,9 @@ import TestOptimizeTabDoc from "./TestOptimizeTabDoc";
 import GeneratingDocsTabDoc from "./GeneratingDocsTabDoc";
 import TestCasesDoc from "./TestCasesDoc";
 import HowItWorks from "./HowItWorks";
+import AddingProjectDoc from "./AddingProjectDoc";
+import RecordAndCodegenDoc from "./RecordAndCodegenDoc";
+import McpToolsDoc from "./McpToolsDoc";
 
 function Docs() {
   const [section, setSection] = useState(0);
@@ -29,15 +32,18 @@ function Docs() {
         <Box sx={{ flexGrow: 1, p: 3, height: "100vh", overflowY: "scroll" }}>
           {section === 0 && <HowItWorks />}
           {section === 1 && <Installation />}
-          {section === 2 && <DefaultMockDataDoc />}
-          {section === 3 && <TestCasesDoc />}
-          {section === 4 && <MockServerDoc />}
-          {section === 5 && <EnvironmentVariablesDoc />}
-          {section === 6 && <PlaywrightExample />}
-          {section === 7 && <ReactExample />}
-          {section === 8 && <RecordHarDoc />}
-          {section === 9 && <TestOptimizeTabDoc />}
-          {section === 10 && <GeneratingDocsTabDoc />}
+          {section === 2 && <AddingProjectDoc />}
+          {section === 3 && <DefaultMockDataDoc />}
+          {section === 4 && <TestCasesDoc />}
+          {section === 5 && <RecordAndCodegenDoc />}
+          {section === 6 && <MockServerDoc />}
+          {section === 7 && <EnvironmentVariablesDoc />}
+          {section === 8 && <PlaywrightExample />}
+          {section === 9 && <ReactExample />}
+          {section === 10 && <RecordHarDoc />}
+          {section === 11 && <TestOptimizeTabDoc />}
+          {section === 12 && <GeneratingDocsTabDoc />}
+          {section === 13 && <McpToolsDoc />}
 
           <Box display="flex" justifyContent="space-between">
             <Button

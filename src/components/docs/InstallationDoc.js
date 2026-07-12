@@ -83,11 +83,11 @@ const Installation = () => {
         Configuration
       </Typography>
       <Typography variant="body1" gutterBottom>
-        1. Create a <code>my-project.env</code> file for your project.
+        1. Create an <code>ftmocks.env</code> file for your project.
       </Typography>
       <Typography variant="body1" gutterBottom>
         2. Add the following environment variables in{" "}
-        <code>my-project.env</code> in the project root:
+        <code>ftmocks.env</code> in the project root:
       </Typography>
       <Box component="pre" sx={commonCodeStye}>
         MOCK_DIR=./example/my-project/testMockData
@@ -105,7 +105,7 @@ const Installation = () => {
         To start the project, use:
       </Typography>
       <Box component="pre" sx={commonCodeStye}>
-        npm start my-project
+        npm start &lt;absolute path to ftmocks.env&gt;
       </Box>
     </Box>
   );

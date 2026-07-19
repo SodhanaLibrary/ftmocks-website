@@ -9,34 +9,27 @@ const Installation = () => {
       <Typography variant="h4" gutterBottom>
         Getting Started
       </Typography>
+      <Typography variant="body1" gutterBottom sx={{ mb: 3 }}>
+        You only need Node.js 20+ and npm. Run one command and you're recording your first test in under five minutes.
+      </Typography>
 
-      {/* Prerequisites Section */}
+      {/* Quickstart */}
       <Typography variant="h5" gutterBottom>
-        Prerequisites
+        Quickstart (recommended)
       </Typography>
       <Typography variant="body1" gutterBottom>
-        To run this project, ensure you have the following installed on your
-        machine:
+        From your project directory, run:
       </Typography>
-      <ul>
-        <li>
-          <Typography variant="body1">
-            <Link href="https://nodejs.org/" target="_blank" rel="noopener">
-              Node.js
-            </Link>{" "}
-            (version 20 or later)
-          </Typography>
-        </li>
-        <li>
-          <Typography variant="body1">
-            <Link href="https://www.npmjs.com/" target="_blank" rel="noopener">
-              npm
-            </Link>{" "}
-            (usually included with Node.js)
-          </Typography>
-        </li>
-      </ul>
-      <Box>
+      <Box component="pre" sx={commonCodeStye}>
+        npx ftmocks init-playwright-all
+      </Box>
+      <Typography variant="body1" gutterBottom sx={{ mb: 3 }}>
+        This single command installs Playwright, clones and starts{" "}
+        <code>ftmocks-server</code>, and scaffolds the project structure. Open{" "}
+        <code>http://localhost:5000/</code> to start recording.
+      </Typography>
+
+      <Box sx={{ mb: 3 }}>
         <iframe
           src={`https://www.youtube.com/embed/_-idF5dU4YA`}
           title="How to setup FtMocks and run example project with it"
@@ -49,9 +42,13 @@ const Installation = () => {
           }}
         ></iframe>
       </Box>
-      {/* Installation Section */}
+
+      {/* Manual setup */}
       <Typography variant="h5" gutterBottom>
-        Installation
+        Manual setup
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        If you prefer to set things up yourself:
       </Typography>
       <Typography variant="body1" gutterBottom>
         1. Clone the repository:
@@ -60,19 +57,13 @@ const Installation = () => {
         git clone https://github.com/SodhanaLibrary/ftmocks-server.git
       </Box>
       <Typography variant="body1" gutterBottom>
-        2. Navigate into the project directory:
+        2. Install dependencies:
       </Typography>
       <Box component="pre" sx={commonCodeStye}>
-        cd ftmocks-server
+        cd ftmocks-server && npm install
       </Box>
       <Typography variant="body1" gutterBottom>
-        3. Install dependencies:
-      </Typography>
-      <Box component="pre" sx={commonCodeStye}>
-        npm install
-      </Box>
-      <Typography variant="body1" gutterBottom>
-        3. Install playwright:
+        3. Install Playwright:
       </Typography>
       <Box component="pre" sx={commonCodeStye}>
         npx playwright install
@@ -83,11 +74,7 @@ const Installation = () => {
         Configuration
       </Typography>
       <Typography variant="body1" gutterBottom>
-        1. Create an <code>ftmocks.env</code> file for your project.
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        2. Add the following environment variables in{" "}
-        <code>ftmocks.env</code> in the project root:
+        Create an <code>ftmocks.env</code> file in the project root:
       </Typography>
       <Box component="pre" sx={commonCodeStye}>
         MOCK_DIR=./example/my-project/testMockData
@@ -99,14 +86,14 @@ const Installation = () => {
 
       {/* Running the Project Section */}
       <Typography variant="h5" gutterBottom>
-        Running the Project
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        To start the project, use:
+        Start the server
       </Typography>
       <Box component="pre" sx={commonCodeStye}>
         npm start &lt;absolute path to ftmocks.env&gt;
       </Box>
+      <Typography variant="body1" gutterBottom>
+        Then open <code>http://localhost:5000/</code> to access the FtMocks UI.
+      </Typography>
     </Box>
   );
 };

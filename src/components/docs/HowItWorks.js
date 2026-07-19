@@ -13,39 +13,39 @@ import {
 
 const steps = [
   {
-    title: "Capture All the Data",
+    title: "1. Record",
     description:
-      "The user captures an entire network trace of the application, generating a HAR file filled with detailed network calls. They then upload this file to FtMocks, which uses it to create a robust set of default mock data covering a vast array of requests and responses."
+      "Open your app in a real browser from the FtMocks UI. Every matching API call is captured as a structured mock file. You can record raw mocks only, or run Playwright codegen simultaneously to generate test code at the same time."
   },
   {
-    title: "Design Tailored Test Cases",
+    title: "2. Generate",
     description:
-      "With this foundation, the user can now design specific test cases, each with their own dedicated mock data, tailored to unique scenarios and edge cases."
+      "FtMocks drops you into the Code tab with a ready-to-edit Playwright spec. The generated test is already wired to the mocks you just recorded — no manual setup needed. You can also generate React component tests from the same session."
   },
   {
-    title: "Run Mock Servers with Ease",
+    title: "3. Run — no mock server required",
     description:
-      "The user selects a test case and spins up the mock server. This server will seamlessly handle incoming requests as if it were the live backend."
+      "Click the play icon to run the test headless. The ftmocks-utils library intercepts network requests at test runtime and serves recorded responses inline. No mock server process, no extra infra in CI — mocks travel with the test as plain JSON files."
   },
   {
-    title: "Respond from Test-Specific Mock Data First",
+    title: "Re-record when APIs change",
     description:
-      "When a request hits the mock server, it first checks the test-specific mock data for a match. If found, it serves the tailored response, making tests highly accurate and relevant."
+      "When a backend API changes, re-record the affected test. Because mocks are plain JSON files, you can review the diff in your PR before merging. You can also edit individual mock payloads directly in the UI or with AI assistance for small changes."
   },
   {
-    title: "Fallback to Default Data",
+    title: "Share defaults across tests",
     description:
-      "If the required mock data isn’t present in the test case's set, the mock server smartly falls back to the default mock data, ensuring every request gets a response. This makes the process resilient and minimizes gaps in test coverage."
+      "Common API responses (auth, config, user profile) can be stored as default mocks at the project level. All tests fall back to default mocks for any request not covered by their own recorded data, so you don’t repeat yourself across test cases."
   }
 ];
 
 export default function HowItWorks() {
   return (
     <Card sx={{ m: 3, mt: 5}}>
-      <CardHeader title="FtMocks Workflow" subheader="An overview of the process" />
+      <CardHeader title="How FtMocks Works" subheader="Record → Generate → Run. No mock server required." />
       <CardContent>
         <Typography variant="body2" color="text.secondary" gutterBottom>
-          Here’s how FtMocks enables you to effortlessly generate and manage mock data for application testing:
+          FtMocks turns real browser interactions into ready-to-run Playwright and React tests with mocks baked in. Here’s the full workflow:
         </Typography>
         <List>
           {steps.map((step, index) => (

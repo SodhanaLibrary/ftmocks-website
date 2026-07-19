@@ -14,40 +14,40 @@ import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 
 const items = [
   {
-    icon: <SettingsSuggestRoundedIcon />,
-    title: 'Adaptable performance',
+    icon: <ConstructionRoundedIcon />,
+    title: 'One-step record + codegen',
     description:
-      'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
+      'A single click opens a real browser, records API traffic as mocks, and generates a Playwright spec — simultaneously.',
   },
   {
-    icon: <ConstructionRoundedIcon />,
-    title: 'Built to last',
+    icon: <SettingsSuggestRoundedIcon />,
+    title: 'Zero CI infrastructure',
     description:
-      'Experience unmatched durability that goes above and beyond with lasting investment.',
+      'Mocks are plain JSON files that live next to your tests. No mock server process, no extra Docker container, no shared state.',
   },
   {
     icon: <ThumbUpAltRoundedIcon />,
-    title: 'Great user experience',
+    title: 'Playwright & React',
     description:
-      'Integrate our product into your routine with an intuitive and easy-to-use interface.',
+      'Generate end-to-end Playwright tests and React component tests from the same recording session.',
   },
   {
     icon: <AutoFixHighRoundedIcon />,
-    title: 'Innovative functionality',
+    title: 'Import from HAR, Postman & traces',
     description:
-      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
-  },
-  {
-    icon: <SupportAgentRoundedIcon />,
-    title: 'Reliable support',
-    description:
-      'Count on our responsive customer support, offering assistance that goes beyond the purchase.',
+      'Bring in existing recordings from any source. FtMocks converts them into structured, reusable mock data instantly.',
   },
   {
     icon: <QueryStatsRoundedIcon />,
-    title: 'Precision in every detail',
+    title: 'AI-assisted mock editing',
     description:
-      'Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.',
+      'Edit mock payloads with an LLM, or drive the entire record-generate-run workflow from Cursor or Claude via the built-in MCP server.',
+  },
+  {
+    icon: <SupportAgentRoundedIcon />,
+    title: 'Version control friendly',
+    description:
+      'All mocks are plain JSON files that diff cleanly. Re-record when APIs change and review the diff before merging.',
   },
 ];
 
@@ -81,9 +81,8 @@ export default function Highlights() {
             Highlights
           </Typography>
           <Typography variant="body1" sx={{ color: 'grey.400' }}>
-            Explore why our product stands out: adaptability, durability,
-            user-friendly design, and innovation. Enjoy reliable customer support and
-            precision in every detail.
+            Everything you need to go from zero to a passing test suite — without
+            writing mocks by hand or running extra infrastructure.
           </Typography>
         </Box>
         <Grid container spacing={2}>

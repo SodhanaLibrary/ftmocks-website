@@ -20,7 +20,7 @@ const steps = [
   {
     title: "2. Generate",
     description:
-      "FtMocks drops you into the Code tab with a ready-to-edit Playwright spec. The generated test is already wired to the mocks you just recorded — no manual setup needed. You can also generate React component tests from the same session."
+      "FtMocks drops you into the Code tab with a ready-to-edit test file. Set PROJECT_TYPE to playwright, react, or angular and FtMocks generates the right format — a Playwright .spec.js, a Jest .test.js, or an Angular .spec.ts — already wired to the mocks you just recorded."
   },
   {
     title: "3. Run — no mock server required",

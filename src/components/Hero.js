@@ -96,7 +96,7 @@ export default function Hero() {
               width: { sm: '100%', md: '80%' },
             }}
           >
-            Record real browser interactions, auto-generate Playwright &amp; React tests
+            Record real browser interactions, auto-generate Playwright, React &amp; Angular tests
             with mocks baked in, and run them anywhere — no mock server required.
           </Typography>
           <Stack

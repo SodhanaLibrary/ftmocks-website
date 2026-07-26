@@ -103,7 +103,7 @@ export default function FAQ() {
             id="panel3d-header"
           >
             <Typography component="h3" variant="subtitle2">
-              Can I use FtMocks with React component tests?
+              Which test frameworks does FtMocks support?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -112,9 +112,10 @@ export default function FAQ() {
               gutterBottom
               sx={{ maxWidth: { sm: '100%', md: '70%' } }}
             >
-              Yes. FtMocks can generate React component tests alongside Playwright end-to-end tests
-              from the same recording session. The recorded mock data is reused across both test types,
-              so you only record once.
+              FtMocks supports Playwright, React (Jest + React Testing Library), and Angular.
+              Set <code>PROJECT_TYPE</code> in your <code>ftmocks.env</code> to <code>playwright</code>,{' '}
+              <code>react</code>, or <code>angular</code> and FtMocks generates the right test format
+              from the same recording. You only record once — the mock data is reused across test types.
             </Typography>
           </AccordionDetails>
         </Accordion>

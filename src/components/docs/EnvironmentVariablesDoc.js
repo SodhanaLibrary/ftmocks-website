@@ -53,14 +53,18 @@ const EnvironmentVariablesDoc = () => {
 
       <Var name="PROJECT_TYPE">
         Selects the kind of tests this project generates and runs:{" "}
-        <code>playwright</code> (the default when unset) or <code>react</code>.
-        For <code>react</code>, the <strong>Record</strong> section swaps the
-        Playwright codegen actions for <strong>Generate React Code</strong>{" "}
-        (Jest + React Testing Library), saves tests as{" "}
-        <code>&lt;test-name&gt;.test.js</code>, and runs them with{" "}
-        <code>REACT_TEST_COMMAND</code>. For <code>playwright</code> it keeps the
-        Playwright codegen flow, saving <code>&lt;test-name&gt;.spec.js</code>{" "}
-        under <code>PLAYWRIGHT_DIR/tests</code>. You can set it from the{" "}
+        <code>playwright</code> (the default when unset), <code>react</code>, or{" "}
+        <code>angular</code>. For <code>react</code>, the{" "}
+        <strong>Record</strong> section swaps the Playwright codegen actions for{" "}
+        <strong>Generate React Code</strong> (Jest + React Testing Library),
+        saves tests as <code>&lt;test-name&gt;.test.js</code>, and runs them
+        with <code>REACT_TEST_COMMAND</code>. For <code>angular</code>, it
+        generates <code>&lt;test-name&gt;.spec.ts</code> files saved to{" "}
+        <code>ANGULAR_TESTS_DIR</code> and runs them with{" "}
+        <code>ANGULAR_TEST_COMMAND</code>. For <code>playwright</code> it keeps
+        the Playwright codegen flow, saving{" "}
+        <code>&lt;test-name&gt;.spec.js</code> under{" "}
+        <code>PLAYWRIGHT_DIR/tests</code>. You can set it from the{" "}
         <strong>Projects</strong> page (Edit env file) or by hand.
       </Var>
 
@@ -87,6 +91,23 @@ const EnvironmentVariablesDoc = () => {
         <code>NODE_ENV=test</code>. Set it per project, for example{" "}
         <code>npx react-scripts test --watchAll=false</code> (Create React App)
         or <code>npx vitest run</code> (Vitest).
+      </Var>
+
+      <Var name="ANGULAR_TESTS_DIR">
+        Angular projects only (<code>PROJECT_TYPE=angular</code>). Directory
+        where generated <code>*.spec.ts</code> files are saved (for example{" "}
+        <code>../src/app/tests</code>). Relative paths resolve from{" "}
+        <code>MOCK_DIR</code>.
+      </Var>
+
+      <Var name="ANGULAR_TEST_COMMAND">
+        Angular projects only. Command used to run a single Angular test.
+        Defaults to <code>npx jest</code> (via jest-preset-angular). The test
+        file path is appended, and it runs from the nearest{" "}
+        <code>package.json</code> directory with <code>NODE_ENV=test</code>.
+        Generated Angular tests render the component with <code>TestBed</code>{" "}
+        and install an FtMocks <code>HttpClient</code> interceptor (
+        <code>ftmocksHttpInterceptor</code> from <code>ftmocks-utils</code>).
       </Var>
 
       <Var name="FALLBACK_DIR">
@@ -204,6 +225,21 @@ REACT_TESTS_DIR=../src/tests`}
         <code>getByXPath</code>), so the target project needs{" "}
         <code>ftmocks-utils</code> (&ge; 1.7.0), <code>jest</code>, and{" "}
         <code>@testing-library/react</code> installed.
+      </Typography>
+
+      <Typography variant="h5" gutterBottom sx={{ mt: 3 }}>
+        Example project env (Angular)
+      </Typography>
+      <Box component="pre" sx={commonCodeStye}>
+        {`MOCK_DIR=./testMockData
+PORT=5000
+PROJECT_TYPE=angular
+ANGULAR_TESTS_DIR=../src/app/tests`}
+      </Box>
+      <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+        Generated Angular tests use <code>ftmocks-utils</code> for mock
+        interception, so the target project needs{" "}
+        <code>ftmocks-utils</code> (&ge; 1.7.0) installed.
       </Typography>
     </Box>
   );

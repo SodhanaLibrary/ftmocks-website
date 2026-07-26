@@ -41,8 +41,8 @@ const Features = () => {
     {
       testId: 'heading-no-mock-server',
       imageSrc: '/static/mockData.png',
-      title: 'No Mock Server Needed in CI',
-      description: "Recorded mocks travel with your tests as plain JSON files. When a test runs, ftmocks-utils intercepts network requests and serves the recorded responses inline. Your CI pipeline needs zero extra infrastructure — no mock server process, no shared state, no flaky live API calls.",
+      title: 'Playwright, React & Angular — One Tool',
+      description: "Set PROJECT_TYPE to playwright, react, or angular and FtMocks generates the right test format from the same recording. Playwright specs, Jest + React Testing Library tests, and Angular spec files — all wired to recorded mocks, all runnable without a mock server in CI.",
     },
     {
       testId: 'heading-mock-server',

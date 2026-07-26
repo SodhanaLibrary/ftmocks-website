@@ -27,9 +27,9 @@ const items = [
   },
   {
     icon: <ThumbUpAltRoundedIcon />,
-    title: 'Playwright & React',
+    title: 'Playwright, React & Angular',
     description:
-      'Generate end-to-end Playwright tests and React component tests from the same recording session.',
+      'Generate Playwright e2e tests, React component tests, or Angular spec files from the same recording — switch with a single PROJECT_TYPE setting.',
   },
   {
     icon: <AutoFixHighRoundedIcon />,

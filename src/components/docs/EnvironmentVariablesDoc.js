@@ -51,11 +51,42 @@ const EnvironmentVariablesDoc = () => {
         server uses the first entry when FtMocks spawns it.
       </Var>
 
+      <Var name="PROJECT_TYPE">
+        Selects the kind of tests this project generates and runs:{" "}
+        <code>playwright</code> (the default when unset) or <code>react</code>.
+        For <code>react</code>, the <strong>Record</strong> section swaps the
+        Playwright codegen actions for <strong>Generate React Code</strong>{" "}
+        (Jest + React Testing Library), saves tests as{" "}
+        <code>&lt;test-name&gt;.test.js</code>, and runs them with{" "}
+        <code>REACT_TEST_COMMAND</code>. For <code>playwright</code> it keeps the
+        Playwright codegen flow, saving <code>&lt;test-name&gt;.spec.js</code>{" "}
+        under <code>PLAYWRIGHT_DIR/tests</code>. You can set it from the{" "}
+        <strong>Projects</strong> page (Edit env file) or by hand.
+      </Var>
+
       <Var name="PLAYWRIGHT_DIR">
         Path to your Playwright project (often relative to{" "}
         <code>MOCK_DIR</code>). Used when generating or resolving Playwright
         code and for paths exposed to the UI (e.g. relative paths from the
-        Playwright directory).
+        Playwright directory). Applies when <code>PROJECT_TYPE</code> is{" "}
+        <code>playwright</code>.
+      </Var>
+
+      <Var name="REACT_TESTS_DIR">
+        React projects only (<code>PROJECT_TYPE=react</code>). Directory where
+        generated <code>*.test.js</code> files are saved and read back (for
+        example <code>../src/tests</code>). Relative paths resolve from{" "}
+        <code>MOCK_DIR</code>. This is the React analogue of{" "}
+        <code>PLAYWRIGHT_DIR</code>.
+      </Var>
+
+      <Var name="REACT_TEST_COMMAND">
+        React projects only. Command used to run a single React test. Defaults
+        to <code>npx jest</code>. The test file path is appended to the command,
+        and it runs from the nearest <code>package.json</code> directory with{" "}
+        <code>NODE_ENV=test</code>. Set it per project, for example{" "}
+        <code>npx react-scripts test --watchAll=false</code> (Create React App)
+        or <code>npx vitest run</code> (Vitest).
       </Var>
 
       <Var name="FALLBACK_DIR">
@@ -147,15 +178,33 @@ const EnvironmentVariablesDoc = () => {
       </Typography>
 
       <Typography variant="h5" gutterBottom sx={{ mt: 3 }}>
-        Example project env
+        Example project env (Playwright)
       </Typography>
       <Box component="pre" sx={commonCodeStye}>
         {`MOCK_DIR=./example/my-project/testMockData
 PORT=5000
 PREFERRED_SERVER_PORTS=[4051]
+PROJECT_TYPE=playwright
 PLAYWRIGHT_DIR=../playwright/
 FALLBACK_DIR=../build`}
       </Box>
+
+      <Typography variant="h5" gutterBottom sx={{ mt: 3 }}>
+        Example project env (React)
+      </Typography>
+      <Box component="pre" sx={commonCodeStye}>
+        {`MOCK_DIR=./testMockData
+PORT=5000
+PROJECT_TYPE=react
+REACT_TESTS_DIR=../src/tests`}
+      </Box>
+      <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+        Generated React tests import their runtime from{" "}
+        <code>ftmocks-utils</code> (<code>initiateJestFetch</code>,{" "}
+        <code>getByXPath</code>), so the target project needs{" "}
+        <code>ftmocks-utils</code> (&ge; 1.7.0), <code>jest</code>, and{" "}
+        <code>@testing-library/react</code> installed.
+      </Typography>
     </Box>
   );
 };
